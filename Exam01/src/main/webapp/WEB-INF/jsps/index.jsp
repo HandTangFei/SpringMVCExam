@@ -42,7 +42,7 @@
 	<div id="content">
 		<div id="navigation">
 			<ul style="margin-top:2px" class="nav nav-pills nav-stacked">
-				<li style="background-color:#E8CCFF"><a href="#">Customer管理</a></li>
+				<li style="background-color:#E8CCFF"><a href="<%=basePath%>/customer/allCustomers">Customer管理</a></li>
 				<li style="background-color:#E8CCFF"><a href="#">Film设置</a></li>
 			</ul>
 		</div>
@@ -50,22 +50,19 @@
 		<div id="film">
 
 			<div id="table">
-				<form action="<%=basePath%>/customer/allCustomers" id="mainForm"
-					method="post">
-					<input type="hidden" name="currentPage" id="currentPage"
-						value="${page.currentPage}" />
+				<form action="<%=basePath%>/customer/allCustomers" id="mainForm" method="post">
+					<input type="hidden" name="currentPage" id="currentPage"value="${page.currentPage}" />
 
 					<div class="right">
 						<div class="current">客户管理</div>
 						<div class="rightCont">
 							<p class="g_title fix">
-								客户列表 <a class="btn03" href="<%=basePath%>/customer/addCustomer">新
-									增</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								客户列表 <a class="btn03" href="<%=basePath%>/customer/addCustomer">新增</a>&nbsp;&nbsp;&nbsp;&nbsp;
 							</p>
 							<table class="tab1">
 								<tbody>
 									<tr>
-
+										<input type="hidden" id="basePath" value="<%=basePath%>"/>
 									</tr>
 								</tbody>
 							</table>
@@ -73,7 +70,7 @@
 								<table class="tab2" width="100%">
 									<tbody>
 										<tr>
-											<th>Oprator</th>
+										   <th>Oprator</th>
 											<th>FirstName</th>
 											<th>LastName</th>
 											<th>Address</th>
@@ -81,12 +78,10 @@
 											<th>CustomerId</th>
 											<th>LastUpdate</th>
 										</tr>
-										<c:forEach items="${customers}" var="customer"
-											varStatus="status">
+										<c:forEach items="${customers}" var="customer" varStatus="status">
 											<tr
 												<c:if test="${status.index % 2 != 0}">style='background-color:#ECF6EE;'</c:if>>
-												<td><a onclick="modify(${customer.customer_id})"
-													data-toggle="modal" data-target="#myModal">修改</a>&nbsp;|&nbsp;
+												<td><a onclick="modify(${customer.customer_id})"data-toggle="modal" data-target="#myModal">修改</a>&nbsp;|&nbsp;
 													<%-- <a href="${basePath}DeleteOneServlet.action?id=${customer.customer_id}">删除</a> --%>
 													<a href="#">删除</a></td>
 												<td>${customer.first_name}</td>
@@ -125,6 +120,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</form>
 
 			</div>
@@ -142,15 +138,11 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="myModalLabel">修改客户信息</h4>
-				</div>
-				<form action="">
-
+				<%-- <form action="<%=basePath%>/customer/modifyCustomer " method="POST"> --%>
+					
 					<div class="modal-body" style="height: 250px;">
-
-
 						<div class="col-lg-8">
 							<div class="input-group">
 								<span class="input-group-btn">
@@ -185,27 +177,22 @@
 									<button class="btn btn-default" type="button">&nbsp;&nbsp;&nbsp;Address*</button>
 								</span>
 								<div class="col-lg-16">
-									<select class="form-control">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
+									<select id="address" name="address" class="form-control">
+										<c:forEach items="${addressObjects}" var="add2" varStatus="status">
+											<option>${ add2.address }</option>
+										</c:forEach>
+										
 									</select>	
 								</div>
-								<!-- /.col-lg-6 -->
-
 							</div>
-
 						</div>
-
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-						<button type="submit" class="btn btn-primary">提交更改</button>
+						<button id="modifybtn" type="button"   class="btn btn-primary">提交更改</button>
 					</div>
-
-				</form>
+					<input type="hidden" name="customer_id" id="customer_id" />
+				<!-- </form> -->
 			</div>
 		</div>
 </body>

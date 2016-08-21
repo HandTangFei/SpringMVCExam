@@ -58,10 +58,14 @@ public class CustomerController {
 				}
 			}
 		}
+		List<Address> addressObjects = addressService.getAllAddress();
 		// 查询消息列表并传给页面,向页面传值
 		mv.addObject("customers",customers);
 		mv.addObject("page",page);
 		mv.addObject("adds", adds);
+		mv.addObject("addressObjects", addressObjects);
+		
+		
 		mv.setViewName("index");
 		log.warn("Done");
 		return mv;
@@ -78,8 +82,10 @@ public class CustomerController {
 		System.out.println(customer.getLast_name());
 		System.out.println(customer.getEmail());
 		System.out.println(customer.getAddress_id());
-		
+		List<Address> addressObjects = addressService.getAllAddress();
 		customer.setAddress_id(5);
+		
+		mv.addObject("addressObjects", addressObjects);
 		boolean bool = customerService.saveCustomer(customer);
 		if(bool){
 			System.out.println("Add successful!");
@@ -88,7 +94,6 @@ public class CustomerController {
 			System.out.println("Add Failedl!");
 			mv.addObject("msg", "Add Failedl!");
 		}
-		
 		mv.setViewName("addCustomer");
 		log.warn("Done");
 		return mv;
@@ -96,25 +101,39 @@ public class CustomerController {
 	
 	
 	@ RequestMapping(value="/getCustomer")
-	public void getCustomer(HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException{
-		System.out.println("nice");
+	public void getCustomer(HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
 		String customer_id =  (String) request.getParameter("customer_id");
 		System.out.println(customer_id);
 		List<Customer> recordList = new ArrayList<Customer>();
-		
-		
-		Customer customer = customerService.getCustomerByCustomer_Id(customer_id);
-		customer.setFirst_name("tony");
-		recordList.add(customer);
+		Customer customer = customerService.getCustomerByCustomer_Id(Integer.parseInt(customer_id));
 		response.setCharacterEncoding("utf-8");
-		try {
+		if(customer !=null){
+			recordList.add(customer);
 			response.getWriter().write("{\"success\":true, \"data\":" + JSONUtil.serialize(recordList) + "}");
 			response.getWriter().flush();
-		} catch (IOException e) {
-			e.printStackTrace();
+		}else{
+			response.getWriter().write("{\"success\":false }");
+			response.getWriter().flush();
 		}
-		
 	}
 	
+	@ RequestMapping(value="/modifyCustomer")
+	public void modifyCustomer(@ModelAttribute Customer customer,HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
+
+		System.out.println(customer.getAddress_id());
+		customer.setAddress_id(5);
+		boolean  bool = customerService.modifyCustomer(customer);
+		response.setCharacterEncoding("utf-8");
+		response.getWriter().write("{\"success\":true }");
+		response.getWriter().flush();
+	}
 	
+	@ RequestMapping(value="/deleteCustomer")
+	public void deleteCustomer(@ModelAttribute Customer customer,HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
+		
+		
+		response.setCharacterEncoding("utf-8");
+		response.getWriter().write("{\"success\":true }");
+		response.getWriter().flush();
+	}
 }

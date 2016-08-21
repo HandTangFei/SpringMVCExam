@@ -28,4 +28,6 @@ public interface CustomerInter {
 	public Customer getCustomerByFirstName(String firstName);
 
 	public Customer getCustomerByCustomer_Id(Integer customer_id);
+
+	public void modifyCustomer(Customer customer);
 }

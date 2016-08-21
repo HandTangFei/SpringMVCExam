@@ -15,13 +15,14 @@
 	</select>
 
 
-  	<select id="queryMessageListByPage" parameterType="java.util.Map" resultType="Customer">
-   	  select * from customer  order by customer_id
-  	</select>
-  
-  
+	<select id="queryMessageListByPage" parameterType="java.util.Map"
+		resultType="Customer">
+		select * from customer order by customer_id
+	</select>
 
-	<select id="count"  resultType="int">
+
+
+	<select id="count" resultType="int">
 		select count(*) from customer
 	</select>
 
@@ -36,13 +37,21 @@
 	</insert>
 
 
+	<update id="modifyCustomer" parameterType="Customer">
+		UPDATE customer SET first_name=#{first_name},last_name=#{last_name},
+		email=#{email},address_id=#{address_id},last_update=#{last_update}
+		where customer_id = #{customer_id}
+	</update>
 
 
-	<select id="getCustomerByFirstName"  parameterType="String" resultType="Customer">
+
+	<select id="getCustomerByFirstName" parameterType="String"
+		resultType="Customer">
 		select * from customer where first_name = #{firstName};
 	</select>
 
-	<select id="getCustomerByCustomer_id"  parameterType="Integer" resultType="Customer">
+	<select id="getCustomerByCustomer_Id" parameterType="Integer"
+		resultType="Customer">
 		select * from customer where customer_id = #{customer_id};
 	</select>
 

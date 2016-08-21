@@ -88,7 +88,6 @@ public class CustomerService {
 			customer.setEmail(strs[2]);
 			customer.setAddress_id(Integer.parseInt(strs[3]));
 			Date now = new Date(); 
-//			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd H:m:s");
 			customer.setCreate_date(format.format(now));
 			customer.setLast_update(format.format(now));
@@ -141,6 +140,23 @@ public class CustomerService {
 		return customer;
 	}
 	
+
+	public boolean modifyCustomer(Customer customer) {
+		boolean bool = true;
+		try {
+			Date now = new Date(); 
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd H:m:s");
+			customer.setLast_update(format.format(now));
+    		CustomerInter customerMapper =  (CustomerInter) ctx.getBean("customerMapper");
+    		customerMapper.modifyCustomer(customer);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return bool;
+	}
+	
+	
 	
 	
 	public List<Customer> getCustomers(Page page) {
@@ -151,13 +167,8 @@ public class CustomerService {
     		
     		Map<String,Object> parameter = new HashMap<String, Object>();
     		// 组织消息对象
-//    		Message message = new Message();
-//    		message.setCommand(command);
-//    		message.setDescription(description);
     		parameter.put("message", "message");
     		parameter.put("page", page);
-    		
-    		
     		
     		int totalNumber = customerMapper.count();
     		// 组织分页查询参数
@@ -172,6 +183,8 @@ public class CustomerService {
 		}
 		return customers;
 	}
+
+
 
 	
 	

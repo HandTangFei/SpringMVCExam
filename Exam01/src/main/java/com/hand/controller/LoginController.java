@@ -1,5 +1,6 @@
 package com.hand.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hand.model.Address;
 import com.hand.model.Customer;
+import com.hand.service.AddressService;
 import com.hand.service.CustomerService;
 import com.hand.utils.entity.Page;
 
@@ -21,6 +24,7 @@ import com.hand.utils.entity.Page;
 public class LoginController {
 	
 	private CustomerService customerService = new CustomerService() ;
+	private AddressService addressService = new AddressService() ;
 	private static Logger log=LoggerFactory.getLogger(LoginController.class);
 	
 	@ RequestMapping("/login")
@@ -61,10 +65,27 @@ public class LoginController {
 			} else {
 				page.setCurrentPage(Integer.valueOf(currentPage));
 			}
+			
 			List<Customer> customers = customerService.getCustomers(page);
-
+			Address address =  new Address();
+			List<String> adds = new ArrayList<String>();
+			for(Customer cus:customers){
+				address = addressService.getAddressById(cus.getAddress_id());
+				if(address != null){
+					if(address.getAddress()!=null){
+						adds.add(address.getAddress());
+					}else{
+						adds.add(address.getAddress2());
+					}
+				}
+			}
+			
+			List<Address> addressObjects = addressService.getAllAddress();
+			
 			// 查询消息列表并传给页面
 			mv.addObject("customers",customers);
+			mv.addObject("addressObjects", addressObjects);
+			mv.addObject("adds", adds);
 			mv.addObject("page",page);
 			mv.setViewName("index");
 			log.warn("Login success!");
