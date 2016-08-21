@@ -62,7 +62,7 @@
 							<table class="tab1">
 								<tbody>
 									<tr>
-										<input type="hidden" id="basePath" value="<%=basePath%>"/>
+										<input type="hidden" id="basePath" value="<%= basePath%>"/>
 									</tr>
 								</tbody>
 							</table>

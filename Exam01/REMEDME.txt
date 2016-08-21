@@ -1,0 +1,8 @@
+1 数据库配置文件在 Exam01\src\main\resources\dbdbconfig.properties  ,请修改用名user 用户密码：password；数据库为sakila
+2 在工程目录SpringMVCExam\Exam01\ 下打开命令窗口，运行 mvn jetty:run
+3 在浏览器中输入 http://localhost:8080/login 进入登录窗口
+4 请输入用户名，要在数据库sakila中的customer表的first_name 对应 ，密码随意，不能为空就行；
+5 正确数据用户名和密码进入index界面，否则返回登录界面
+6 当进入index界面，每页显示15行数据，可在下方进行翻页操作。
+7 点击添加按钮，进入添加页面，进行用户添加
+8 点击修改按钮，进行数据修改

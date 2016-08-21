@@ -1,5 +1,7 @@
 function modify( customer_id){
 	var basePath = $("#basePath").val();
+	alert(basePath);
+	
 	$.ajax( {  
 		type : "GET",  
 		url : basePath+"customer/getCustomer",
@@ -30,6 +32,7 @@ function modify( customer_id){
 $(document).ready(  
 		function() {  
 			var basePath = $("#basePath").val();
+			alert(basePath);
 			$("#modifybtn").click(function() { 
 				$.ajax( {  
 					type : "POST",  

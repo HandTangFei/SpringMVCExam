@@ -1,30 +1,5 @@
-23:02:19,523 WARN  [com.hand.controller.CustomerController] Done
- 23:02:21,407 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:02:22,720 WARN  [com.hand.controller.LoginController] Done
- 23:02:22,939 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:02:29,142 WARN  [com.hand.controller.LoginController] Login success!
- 23:02:30,299 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:02:32,393 WARN  [com.hand.controller.LoginController] Login failed!
- 23:02:32,580 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:02:41,553 WARN  [com.hand.controller.LoginController] Login success!
- 23:02:42,162 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:02:44,382 WARN  [com.hand.controller.LoginController] Login failed!
- 23:02:44,538 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:03:32,824 WARN  [com.hand.controller.LoginController] Login success!
- 23:03:33,636 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:03:35,496 WARN  [com.hand.controller.CustomerController] Done
- 23:03:35,761 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:03:38,699 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:03:58,905 WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver] Handler execution resulted in exception: org.springframework.validation.BeanPropertyBindingResult: 1 errors
-Field error in object 'customer' on field 'address_id': rejected value [1121 Loja Avenue]; codes [typeMismatch.customer.address_id,typeMismatch.address_id,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customer.address_id,address_id]; arguments []; default message [address_id]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'address_id'; nested exception is java.lang.NumberFormatException: For input string: "1121LojaAvenue"]
- 23:04:01,249 WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver] Handler execution resulted in exception: org.springframework.validation.BeanPropertyBindingResult: 1 errors
-Field error in object 'customer' on field 'address_id': rejected value [1121 Loja Avenue]; codes [typeMismatch.customer.address_id,typeMismatch.address_id,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customer.address_id,address_id]; arguments []; default message [address_id]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'address_id'; nested exception is java.lang.NumberFormatException: For input string: "1121LojaAvenue"]
- 23:04:17,031 WARN  [com.hand.controller.CustomerController] Done
- 23:04:20,313 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:04:40,488 WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver] Handler execution resulted in exception: org.springframework.validation.BeanPropertyBindingResult: 1 errors
-Field error in object 'customer' on field 'address_id': rejected value [53 Idfu Parkway]; codes [typeMismatch.customer.address_id,typeMismatch.address_id,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customer.address_id,address_id]; arguments []; default message [address_id]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'address_id'; nested exception is java.lang.NumberFormatException: For input string: "53IdfuParkway"]
- 23:04:42,519 WARN  [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver] Handler execution resulted in exception: org.springframework.validation.BeanPropertyBindingResult: 1 errors
-Field error in object 'customer' on field 'address_id': rejected value [53 Idfu Parkway]; codes [typeMismatch.customer.address_id,typeMismatch.address_id,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customer.address_id,address_id]; arguments []; default message [address_id]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'address_id'; nested exception is java.lang.NumberFormatException: For input string: "53IdfuParkway"]
- 23:04:51,431 WARN  [com.hand.controller.CustomerController] Done
- 23:04:51,806 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+23:16:19,496 WARN  [com.hand.controller.LoginController] Done
+ 23:16:20,652 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 23:18:09,851 WARN  [com.hand.controller.LoginController] Login success!
+ 23:18:13,633 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
  

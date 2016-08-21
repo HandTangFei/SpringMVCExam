@@ -8,4 +8,9 @@
 		select * from address where address_id = #{id}
 	</select>
 	
+	<select id="getAllAddress"  resultType="Address">
+		select * from address
+	</select>
+	
+	
 </mapper>
