@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.hand.inter.CustomerInter">
+
+	<select id="getCustomer" resultType="Customer">
+		select * from customer where
+		customer_id = (select max(customer_id) from customer);
+	</select>
+
+	<select id="getCustomers" resultType="Customer">
+		select * from customer;
+	</select>
+
+
+  	<select id="queryMessageListByPage" parameterType="java.util.Map" resultType="Customer">
+   	  select * from customer  order by customer_id
+  	</select>
+  
+  
+
+	<select id="count"  resultType="int">
+		select count(*) from customer
+	</select>
+
+
+	<insert id="addCustomer" parameterType="Customer"
+		useGeneratedKeys="true" keyProperty="customer_id">
+		insert into
+		customer(store_id,first_name,last_name,email,address_id,active,create_date,last_update)
+		values
+		(
+		#{store_id},#{first_name},#{last_name},#{email},#{address_id},#{active},#{create_date},#{last_update})
+	</insert>
+
+
+
+
+	<select id="getCustomerByFirstName"  parameterType="String" resultType="Customer">
+		select * from customer where first_name = #{firstName};
+	</select>
+
+	<select id="getCustomerByCustomer_id"  parameterType="Integer" resultType="Customer">
+		select * from customer where customer_id = #{customer_id};
+	</select>
+
+
+</mapper>

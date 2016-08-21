@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+
+body{
+	background-image: url(../images/loginBackground.jpg);
+	background-repeat: no-repeat;
+	background-size:100% 800px;
+}
+
+
+#title{
+
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/* #content{
+	text-align: center;
+}
+ */
+
+#film {
+
+	margin-bottom 100px;
+	margin-top  100px;
+	border-bottom-width 1px;
+	padding-left: 250px;
+	
+	border-width: 2px;
+}
+
+#login{
+	padding-left: 200px;
+	
+}

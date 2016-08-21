@@ -1,0 +1,3 @@
+20:21:55,867 WARN  [com.hand.controller.CustomerController] Done
+ 20:21:57,398 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 
