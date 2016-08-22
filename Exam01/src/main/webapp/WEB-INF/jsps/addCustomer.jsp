@@ -98,7 +98,7 @@
 											<button class="btn btn-default" type="button">&nbsp;&nbsp;&nbsp;Address*</button>
 										</span>
 										<div class="col-lg-16">
-											<select id="address" name="address" class="form-control">
+											<select id="address" name="address" class="form-control" value="">
 												<c:forEach items="${addressObjects}" var="add2"
 													varStatus="status">
 													<option>${ add2.address }</option>

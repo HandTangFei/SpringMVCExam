@@ -78,13 +78,9 @@ public class CustomerController {
 //		String address = (String) request.getAttribute("address");
 		System.out.println(address);
 		System.out.println("add");
-		System.out.println(customer.getFirst_name());
-		System.out.println(customer.getLast_name());
-		System.out.println(customer.getEmail());
-		System.out.println(customer.getAddress_id());
-		
+		Address addressObj = addressService.getAddressByName(address);
 		List<Address> addressObjects = addressService.getAllAddress();
-		customer.setAddress_id(5);
+		customer.setAddress_id(addressObj.getAddress_id());
 		
 		mv.addObject("addressObjects", addressObjects);
 		boolean bool = customerService.saveCustomer(customer);
