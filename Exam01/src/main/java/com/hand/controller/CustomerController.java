@@ -73,15 +73,16 @@ public class CustomerController {
 	
 	
 	@ RequestMapping(value="/addCustomer")
-	public ModelAndView addCustomer(@ModelAttribute Customer customer,HttpServletRequest request,HttpServletResponse response){
+	public ModelAndView addCustomer(@ModelAttribute Customer customer,String address,HttpServletRequest request,HttpServletResponse response){
 		ModelAndView mv = new ModelAndView();
-		String address = (String) request.getAttribute("address");
+//		String address = (String) request.getAttribute("address");
 		System.out.println(address);
 		System.out.println("add");
 		System.out.println(customer.getFirst_name());
 		System.out.println(customer.getLast_name());
 		System.out.println(customer.getEmail());
 		System.out.println(customer.getAddress_id());
+		
 		List<Address> addressObjects = addressService.getAllAddress();
 		customer.setAddress_id(5);
 		
@@ -120,8 +121,11 @@ public class CustomerController {
 	@ RequestMapping(value="/modifyCustomer")
 	public void modifyCustomer(@ModelAttribute Customer customer,HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
 
-		System.out.println(customer.getAddress_id());
-		customer.setAddress_id(5);
+		String address = request.getParameter("address");
+		Address addressObj = addressService.getAddressByName(address);
+//		System.out.println(addressObj.getAddress());
+//		System.out.println(addressObj.getAddress_id());
+		customer.setAddress_id(addressObj.getAddress_id());
 		boolean  bool = customerService.modifyCustomer(customer);
 		response.setCharacterEncoding("utf-8");
 		response.getWriter().write("{\"success\":true }");
@@ -130,7 +134,6 @@ public class CustomerController {
 	
 	@ RequestMapping(value="/deleteCustomer")
 	public void deleteCustomer(@ModelAttribute Customer customer,HttpSession session,HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
-		
 		
 		response.setCharacterEncoding("utf-8");
 		response.getWriter().write("{\"success\":true }");

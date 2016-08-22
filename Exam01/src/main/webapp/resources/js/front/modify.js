@@ -31,15 +31,16 @@ function modify( customer_id){
 
 $(document).ready(  
 		function() {  
-			var basePath = $("#basePath").val();
-			alert(basePath);
 			$("#modifybtn").click(function() { 
+				alert("ok");
+				var basePath = $("#basePath").val();
+				alert(basePath);
 				$.ajax( {  
 					type : "POST",  
 					url : basePath+"customer/modifyCustomer",
 					data : {
 						'customer_id' :$("#customer_id").val(),
-						'address_id' : $("#address").find('option:selected').text(),
+						'address' : $("#address").find('option:selected').text(),
 						'first_name' :$("#first_name").val(),
 						'last_name':$("#last_name").val(),
 						'email':$("#email").val(),

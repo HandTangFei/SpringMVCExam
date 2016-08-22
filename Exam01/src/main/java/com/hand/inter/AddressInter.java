@@ -9,4 +9,6 @@ public interface AddressInter {
 	public Address getAddressById(int id);
 
 	public List<Address> getAllAddress();
+
+	public Address getAddressByName(String address);
 }

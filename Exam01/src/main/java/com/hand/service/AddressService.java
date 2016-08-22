@@ -49,4 +49,17 @@ public class AddressService {
 		
 	}
 
+	public Address getAddressByName(String address) {
+		Address addressObj = new Address();
+		try {
+			AddressInter addressMapper =  (AddressInter) ctx.getBean("addressMapper");
+			addressObj = addressMapper.getAddressByName(address);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+		return addressObj;
+	}
+
 }

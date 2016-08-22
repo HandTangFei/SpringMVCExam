@@ -1,5 +1,11 @@
-23:16:19,496 WARN  [com.hand.controller.LoginController] Done
- 23:16:20,652 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
- 23:18:09,851 WARN  [com.hand.controller.LoginController] Login success!
- 23:18:13,633 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+09:25:50,953 WARN  [com.hand.controller.CustomerController] Done
+ 09:25:52,657 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 09:25:54,876 WARN  [com.hand.controller.CustomerController] Done
+ 09:25:55,141 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 09:26:12,315 WARN  [com.hand.controller.CustomerController] Done
+ 09:26:12,878 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 09:28:43,841 WARN  [com.hand.controller.CustomerController] Done
+ 09:28:44,201 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
+ 09:29:01,531 WARN  [com.hand.controller.CustomerController] Done
+ 09:29:01,734 WARN  [org.springframework.web.servlet.PageNotFound] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'
  

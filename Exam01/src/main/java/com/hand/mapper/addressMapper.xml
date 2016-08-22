@@ -7,10 +7,14 @@
 	<select id="getAddressById" parameterType="int" resultType="Address">
 		select * from address where address_id = #{id}
 	</select>
-	
-	<select id="getAllAddress"  resultType="Address">
+
+	<select id="getAddressByName" parameterType="String" resultType="Address">
+		select * from address where address = #{address}
+	</select>
+
+	<select id="getAllAddress" resultType="Address">
 		select * from address
 	</select>
-	
+
 	
 </mapper>
